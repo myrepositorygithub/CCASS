@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -11,15 +13,21 @@
       <Label layoutX="323.0" layoutY="75.0" prefHeight="15.0" prefWidth="36.0" text="CPF:" />
       <Label layoutX="35.0" layoutY="167.0" prefHeight="15.0" prefWidth="65.0" text="Telefone:" />
       <Label layoutX="35.0" layoutY="211.0" prefHeight="15.0" prefWidth="65.0" text="Email:" />
-      <TextField fx:id="nameField" layoutX="136.0" layoutY="28.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" />
-      <TextField fx:id="rgField" layoutX="136.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" />
-      <TextField fx:id="rgField2" layoutX="242.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="71.0" />
-      <TextField fx:id="cpfField" layoutX="374.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="212.0" />
-      <TextField fx:id="addrField" layoutX="136.0" layoutY="114.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" />
-      <TextField fx:id="foneField" layoutX="136.0" layoutY="162.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="162.0" />
+      <TextField fx:id="nameField" layoutX="136.0" layoutY="28.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="Jose da Silva" />
+      <TextField fx:id="rgField" layoutX="136.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" promptText="Apenas Numeros" />
+      <TextField fx:id="rgField2" layoutX="242.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="77.0" promptText="Org. Exp" />
+      <TextField fx:id="cpfField" layoutX="374.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="212.0" promptText="Apenas numeros">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="addrField" layoutX="136.0" layoutY="114.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="Rua Fictícia A" />
+      <TextField fx:id="foneField" layoutX="136.0" layoutY="162.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="162.0" promptText="DDD 9 9999 9999" />
       <Button fx:id="addDependent" layoutX="374.0" layoutY="162.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="212.0" text="Adiciona Dependente" />
-      <TextField fx:id="emailField" layoutX="136.0" layoutY="206.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" />
+      <TextField fx:id="emailField" layoutX="136.0" layoutY="206.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="exemplo@exe.mplo" />
       <Button fx:id="cadastra" layoutX="62.0" layoutY="248.0" mnemonicParsing="false" onAction="#novoAssociado" text="Cadastra" />
-      <Button fx:id="cancela" layoutX="468.0" layoutY="248.0" mnemonicParsing="false" text="Cancela" />
+      <Button fx:id="cancela" cancelButton="true" defaultButton="true" layoutX="468.0" layoutY="248.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Cancela" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></Button>
    </children>
 </AnchorPane>
