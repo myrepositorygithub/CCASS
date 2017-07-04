@@ -19,6 +19,8 @@ public class ImprimeCheque {
     @FXML
     private TextField valor;
     @FXML
+    private TextField quantidade;
+    @FXML
     private Button cima;
     @FXML
     private Button baixo;
@@ -126,7 +128,9 @@ public class ImprimeCheque {
 
 
         System.out.println(saida);
-        Controller.enviaImpressao(saida);
+        for (int i = 0; i < Integer.parseInt(quantidade.getText()); i++) {
+            Controller.enviaImpressao(saida);
+        }
         closeButtonAction();
 
 
