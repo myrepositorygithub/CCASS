@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="262.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ImprimeCheque">
+    <children>
+        <TextField fx:id="nome" layoutX="318.0" layoutY="112.0" />
+        <TextField fx:id="cpf" layoutX="318.0" layoutY="145.0" />
+        <TextField fx:id="valor" layoutX="169.0" layoutY="125.0" prefHeight="25.0" prefWidth="80.0" />
+        <Label layoutX="269.0" layoutY="150.0" text="CPF" />
+        <Label layoutX="130.0" layoutY="130.0" text="Valor" />
+        <Label layoutX="269.0" layoutY="117.0" text="Nome" />
+        <Button fx:id="cima" layoutX="269.0" layoutY="29.0" mnemonicParsing="false" onAction="#sobe" text="Cima" />
+        <Button fx:id="esquerda" layoutX="24.0" layoutY="125.0" mnemonicParsing="false" onAction="#recua" text="Esquerda" />
+        <Button fx:id="baixo" layoutX="281.0" layoutY="224.0" mnemonicParsing="false" onAction="#desce" text="Baixo" />
+        <Button fx:id="direita" layoutX="513.0" layoutY="125.0" mnemonicParsing="false" onAction="#avanca" text="Direita" />
+        <Button fx:id="imprime" layoutX="412.0" layoutY="224.0" mnemonicParsing="false" onAction="#imprime" text="Imprimir" />
+        <Button fx:id="cancela" layoutX="506.0" layoutY="224.0" mnemonicParsing="false" onAction="#cancela" text="Cancelar" />
+    </children>
+</AnchorPane>

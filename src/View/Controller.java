@@ -64,50 +64,72 @@ public class Controller {
     }
 
     public void printResume(ActionEvent actionEvent) {
-
+        String saida = "";
+        for (int i = 500; i > 0; i--) {
+            saida += ". ";
+        }
+        enviaImpressao(saida);
         System.out.println("testa impressao");
     }
 
     public void printCheck(ActionEvent actionEvent) {
 
-        System.out.println("testa impressao");
+
+        System.out.println("teste");
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("imprimeCheque.fxml"));
+            Parent mainWindow = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            //stage.initStyle(StageStyle.UTILITY);
+            stage.setTitle("Cadastra Associado");
+            stage.setScene(new Scene(mainWindow));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        /*
+        System.out.println("testa chequinho");
         try {
             FileOutputStream os = new FileOutputStream("LPT1");
             //wrap stream in "friendly" PrintStream
             PrintStream ps = new PrintStream(os);
 
             //print text here
-            ps.println("Can anybody find me somebody to love?\n" +
-                    "Each morning I get up I die a little\n" +
-                    "Can barely stand on my feet\n" +
-                    "(Take a look at yourself) Take a look in the mirror and cry\n" +
-                    "Lord what you're doing to me\n" +
-                    "I have spent all my years in believing you\n" +
-                    "But I just can't get no relief Lord\n" +
-                    "Somebody (somebody) ooh somebody (somebody)\n" +
-                    "Can anybody find me somebody to love?\n" +
-                    "\n" +
-                    "I work hard (he works hard) everyday of my life\n" +
-                    "I work till I ache my bones\n" +
-                    "At the end (at the end of the day)\n" +
-                    "I take home my hard earned pay all on my own\n" +
-                    "I get down (down) on my knees (knees)\n" +
-                    "And I start to pray (praise the Lord)\n" +
-                    "Till the tears run down from my eyes\n" +
-                    "Lord somebody (somebody) ooh somebody (please)\n" +
-                    "Can anybody find me somebody to love?\n" +
-                    "(He wants help)\n" +
-                    "\n" +
-                    "Every day - I try and I try and I try\n" +
-                    "But everybody wants to put me down\n" +
-                    "They say I'm goin' crazy\n" +
-                    "They say I got a lot of water in my brain\n" +
-                    "Got no common sense\n" +
-                    "I got nobody left to believe\n" +
-                    "Yeah - yeah yeah yeah\n" +
-                    "Ooh\n" +
-                    "\n");
+            System.out.println("somebody");
+            ps.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");     // posicionar o carro da impressora na parte inferior do cheque
+            ps.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tNome fictício 1\n");
+            ps.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t000.000.000-00 1\n");
 
+            //form feed -- this is important
+            //Without the form feed, the text will simply sit
+            // in print buffer until something else gets printed.
+            ps.print("\f");
+            //flush buffer and close
+            ps.close();
+            System.out.println("to");
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e);
+            System.out.println("love");
+        }
+
+
+        */
+    }
+
+
+    public static void enviaImpressao(String saida) {
+        try {
+            FileOutputStream os = new FileOutputStream("LPT1");
+            //wrap stream in "friendly" PrintStream
+            PrintStream ps = new PrintStream(os);
+
+            //print text here
+            System.out.println("somebody");
+            ps.print(saida);
             //form feed -- this is important
             //Without the form feed, the text will simply sit
             // in print buffer until something else gets printed.
@@ -118,7 +140,6 @@ public class Controller {
             System.out.println("Exception occurred: " + e);
         }
     }
-
 
     public void cadastraAssociado(ActionEvent actionEvent) {
 
