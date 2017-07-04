@@ -2,12 +2,14 @@ package View;
 
 import Control.Associado;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -30,6 +32,12 @@ public class CadastraCliente {
     private TextField foneField;
     @FXML
     private TextField emailField;
+    @FXML
+    private TextField paiField;
+    @FXML
+    private TextField maelField;
+    @FXML
+    private ComboBox<String> metdPagm;
     @FXML
     private Button cadastra;
     @FXML
@@ -126,9 +134,29 @@ public class CadastraCliente {
                         addrField.getText(), new ArrayList<String>());
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
+                Main.dados.adicionaAssociado(novo);
                 closeButtonAction();
             }
         }
+    }
+
+    @FXML
+    private void adcDependente(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("novoDependente.fxml"));
+            Parent mainWindow = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            //stage.initStyle(StageStyle.UTILITY);
+            stage.setTitle("Adiciona Dependente");
+            stage.setScene(new Scene(mainWindow, 600, 190));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 

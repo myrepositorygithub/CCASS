@@ -1,9 +1,12 @@
 package View;
 
+import Control.Associado;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.event.ActionEvent;
 import javafx.stage.Modality;
@@ -43,12 +46,29 @@ public class Controller {
     private MenuItem bugReport;
     @FXML
     private MenuItem about;
+    @FXML
+    private ListView<Associado> listaAssociados;
+
+
+    private ObservableList<Associado> associados;
+
+
+    @FXML
+    private void initialize() {
+
+    }
 
 
     public void encerraSecao(ActionEvent actionEvent) {
 
         System.out.println("testa encerrar");
-        System.exit(0);
+        try {
+            Main.dados.encerraPrograma();
+            System.exit(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
 
 
     }
@@ -151,7 +171,7 @@ public class Controller {
             stage.initModality(Modality.WINDOW_MODAL);
             //stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Cadastra Associado");
-            stage.setScene(new Scene(mainWindow, 600, 300));
+            stage.setScene(new Scene(mainWindow, 600, 500));
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {

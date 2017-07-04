@@ -4,13 +4,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
-            prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="View.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller">
     <center>
         <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <content>
-                <Pane/>
+                <Pane>
+               <children>
+                  <ListView fx:id="listaAssociados" />
+               </children></Pane>
             </content>
         </ScrollPane>
     </center>
@@ -19,42 +20,38 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Arquivo">
                     <items>
-                        <MenuItem fx:id="atualizarDados" mnemonicParsing="false" onAction="#refresh"
-                                  text="Atualizar dados"/>
-                        <MenuItem fx:id="backup" mnemonicParsing="false" onAction="#backup" text="Fazer Backup"/>
-                        <MenuItem fx:id="imprimirRelatorio" mnemonicParsing="false" onAction="#printResume"
-                                  text="Imprimir relátorio"/>
-                        <MenuItem fx:id="imprimircheque" mnemonicParsing="false" onAction="#printCheck"
-                                  text="Imprimir Cheque"/>
-                        <MenuItem fx:id="sair" mnemonicParsing="false" onAction="#encerraSecao" text="Sair"/>
+                        <MenuItem fx:id="atualizarDados" mnemonicParsing="false" onAction="#refresh" text="Atualizar dados" />
+                        <MenuItem fx:id="backup" mnemonicParsing="false" onAction="#backup" text="Fazer Backup" />
+                        <MenuItem fx:id="imprimirRelatorio" mnemonicParsing="false" onAction="#printResume" text="Imprimir relátorio" />
+                        <MenuItem fx:id="imprimircheque" mnemonicParsing="false" onAction="#printCheck" text="Imprimir Cheque" />
+                        <MenuItem fx:id="sair" mnemonicParsing="false" onAction="#encerraSecao" text="Sair" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Associado">
                     <items>
-                        <MenuItem fx:id="cadastrarAssociado" mnemonicParsing="false" onAction="#cadastraAssociado"
-                                  text="Cadastrar Associado"/>
-                        <MenuItem fx:id="buscarAssociado" mnemonicParsing="false" text="Procurar Associado"/>
-                        <MenuItem fx:id="listarAssociados" mnemonicParsing="false" text="Listar Associados"/>
+                        <MenuItem fx:id="cadastrarAssociado" mnemonicParsing="false" onAction="#cadastraAssociado" text="Cadastrar Associado" />
+                        <MenuItem fx:id="buscarAssociado" mnemonicParsing="false" text="Procurar Associado" />
+                        <MenuItem fx:id="listarAssociados" mnemonicParsing="false" text="Listar Associados" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Convênio">
                     <items>
-                        <MenuItem fx:id="cadastrarConvenio" mnemonicParsing="false" text="Cadastrar Convênio"/>
-                        <MenuItem fx:id="buscarConvenio" mnemonicParsing="false" text="Procurar convênio"/>
-                        <MenuItem fx:id="listarConvenio" mnemonicParsing="false" text="Listar Convênios"/>
+                        <MenuItem fx:id="cadastrarConvenio" mnemonicParsing="false" text="Cadastrar Convênio" />
+                        <MenuItem fx:id="buscarConvenio" mnemonicParsing="false" text="Procurar convênio" />
+                        <MenuItem fx:id="listarConvenio" mnemonicParsing="false" text="Listar Convênios" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Ajuda">
                     <items>
-                        <MenuItem fx:id="update" mnemonicParsing="false" text="Verificar Atualizações"/>
-                        <MenuItem fx:id="bugReport" mnemonicParsing="false" text="Informar Bug"/>
-                        <MenuItem fx:id="about" mnemonicParsing="false" text="Sobre"/>
+                        <MenuItem fx:id="update" mnemonicParsing="false" text="Verificar Atualizações" />
+                        <MenuItem fx:id="bugReport" mnemonicParsing="false" text="Informar Bug" />
+                        <MenuItem fx:id="about" mnemonicParsing="false" text="Sobre" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
     </top>
     <bottom>
-        <ProgressBar prefWidth="200.0" progress="0.0" BorderPane.alignment="CENTER"/>
+        <ProgressBar prefWidth="200.0" progress="0.0" BorderPane.alignment="CENTER" />
     </bottom>
 </BorderPane>

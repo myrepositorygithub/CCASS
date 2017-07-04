@@ -1,5 +1,6 @@
 package View;
 
+import Control.Dados;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,11 +9,16 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Dados dados;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        dados = new Dados();
+
         Parent root = FXMLLoader.load(getClass().getResource("mainWindow.fxml"));
         primaryStage.setTitle("Controle de Clientes Asserjup");
-        primaryStage.setScene(new Scene(root, 1100, 600));
+        primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();
     }
 

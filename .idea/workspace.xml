@@ -7,15 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Control/Convenio.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Control/Dados.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Control/Dependente.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/NovoDependente.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/novoDependente.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CCASS_jar/CCASS.jar" afterPath="$PROJECT_DIR$/out/artifacts/CCASS_jar/CCASS.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CCASS/View/CadastraCliente.class" afterPath="$PROJECT_DIR$/out/production/CCASS/View/CadastraCliente.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CCASS/View/Controller.class" afterPath="$PROJECT_DIR$/out/production/CCASS/View/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CCASS_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CCASS_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CCASS/View/Main.class" afterPath="$PROJECT_DIR$/out/production/CCASS/View/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LPT1" afterPath="$PROJECT_DIR$/LPT1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CCASS/View/cadastraCliente.fxml" afterPath="$PROJECT_DIR$/out/production/CCASS/View/cadastraCliente.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CCASS/View/mainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/CCASS/View/mainWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Associado.java" afterPath="$PROJECT_DIR$/src/Control/Associado.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CadastraCliente.java" afterPath="$PROJECT_DIR$/src/View/CadastraCliente.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Controller.java" afterPath="$PROJECT_DIR$/src/View/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ImprimeCheque.java" afterPath="$PROJECT_DIR$/src/View/ImprimeCheque.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Main.java" afterPath="$PROJECT_DIR$/src/View/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/imprimeCheque.fxml" afterPath="$PROJECT_DIR$/src/View/imprimeCheque.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/cadastraCliente.fxml" afterPath="$PROJECT_DIR$/src/View/cadastraCliente.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/mainWindow.fxml" afterPath="$PROJECT_DIR$/src/View/mainWindow.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,41 +85,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-                <element signature="e#596#597#0" expanded="true" />
+                <element signature="e#653#654#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadastraCliente.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/cadastraCliente.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="156" lean-forward="false" selection-start-line="27" selection-start-column="127" selection-end-line="27" selection-end-column="156" />
-              <folding>
-                <marker date="1498711907376" expanded="true" signature="2801:2816" ph="..." />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LPT1" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LPT1">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -116,8 +102,8 @@
       <file leaf-file-name="CadastraCliente.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/CadastraCliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="36" />
+            <state relative-caret-position="174">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,23 +111,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+      <file leaf-file-name="Dependente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Control/Dependente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2080">
-              <caret line="130" column="14" lean-forward="false" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
+            <state relative-caret-position="80">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
+                <element signature="e#320#321#0" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imprimeCheque.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/imprimeCheque.fxml">
+      <file leaf-file-name="novoDependente.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/novoDependente.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="144">
+              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -150,41 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImprimeCheque.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/ImprimeCheque.java">
+      <file leaf-file-name="NovoDependente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/NovoDependente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="131" column="31" lean-forward="true" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
-                <element signature="e#804#805#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#880#881#0" expanded="true" />
-                <element signature="e#915#916#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1016#1017#0" expanded="true" />
-                <element signature="e#1074#1075#0" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#1140#1141#0" expanded="true" />
-                <element signature="e#1169#1170#0" expanded="true" />
-                <element signature="e#1206#1207#0" expanded="true" />
-                <element signature="e#1239#1240#0" expanded="true" />
-                <element signature="e#1277#1278#0" expanded="true" />
-                <element signature="e#1310#1311#0" expanded="true" />
-                <element signature="e#3584#3585#0" expanded="true" />
-                <element signature="e#3619#3620#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="55" lean-forward="false" selection-start-line="0" selection-start-column="55" selection-end-line="0" selection-end-column="55" />
+            <state relative-caret-position="80">
+              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -193,8 +152,42 @@
       <file leaf-file-name="Associado.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Control/Associado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="34" column="70" lean-forward="false" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+            <state relative-caret-position="250">
+              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dados.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Control/Dados.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="72" column="75" lean-forward="true" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Convenio.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Control/Convenio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -203,9 +196,22 @@
       <file leaf-file-name="mainWindow.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/mainWindow.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="102" lean-forward="false" selection-start-line="26" selection-start-column="92" selection-end-line="26" selection-end-column="102" />
-              <folding />
+            <state relative-caret-position="192">
+              <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+              <folding>
+                <marker date="1499201584328" expanded="true" signature="699:3001" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="747:2990" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="767:2971" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="829:1530" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="857:1506" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="1594:2042" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="1622:2018" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="2105:2516" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="2133:2492" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="2576:2950" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="2604:2926" ph="..." />
+                <marker date="1499201584328" expanded="true" signature="3014:3115" ph="..." />
+              </folding>
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
@@ -222,6 +228,17 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>f</find>
+      <find>*</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>pasta</replace>
+      <replace>arquivo</replace>
+      <replace>-</replace>
+    </replaceStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -240,15 +257,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Control/associado.java" />
-        <option value="$PROJECT_DIR$/src/Control/Associado.java" />
-        <option value="$PROJECT_DIR$/src/View/cadastraCliente.fxml" />
-        <option value="$PROJECT_DIR$/src/View/CadastraCliente.java" />
-        <option value="$PROJECT_DIR$/src/View/mainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/config" />
-        <option value="$PROJECT_DIR$/src/View/ImprimeCheque.java" />
         <option value="$PROJECT_DIR$/src/View/imprimeCheque.fxml" />
-        <option value="$PROJECT_DIR$/src/View/Controller.java" />
+        <option value="$PROJECT_DIR$/src/View/ImprimeCheque.java" />
+        <option value="$PROJECT_DIR$/src/View/cadastraCliente.fxml" />
+        <option value="$PROJECT_DIR$/src/View/novoDependente.fxml" />
+        <option value="$PROJECT_DIR$/src/View/Dependente.java" />
+        <option value="$PROJECT_DIR$/src/Control/Dependente.java" />
+        <option value="$PROJECT_DIR$/src/View/mainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/View/Main.java" />
+        <option value="$PROJECT_DIR$/src/View/CadastraCliente.java" />
+        <option value="$PROJECT_DIR$/src/Control/Associado.java" />
+        <option value="$PROJECT_DIR$/src/View/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Control/Dados.java" />
       </list>
     </option>
   </component>
@@ -360,6 +381,8 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last.edited.regexp" value="liveira Cabral*04137837155*20599196-SSPMT*Rua A Qd 11A Bl 5 Ap " />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -582,7 +605,7 @@
     <configuration default="false" name="Main" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="View.*" />
+          <option name="PATTERN" value="Control.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -682,31 +705,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/cadastraCliente.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="129" lean-forward="false" selection-start-line="27" selection-start-column="129" selection-end-line="27" selection-end-column="129" />
-          <folding>
-            <marker date="1498711907376" expanded="true" signature="2801:2816" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CadastraCliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1776">
@@ -784,8 +782,8 @@
           <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -795,7 +793,7 @@
         <state relative-caret-position="432">
           <caret line="27" column="129" lean-forward="false" selection-start-line="27" selection-start-column="129" selection-end-line="27" selection-end-column="129" />
           <folding>
-            <marker date="1498711907376" expanded="true" signature="2801:2816" ph="..." />
+            <marker date="1499199727683" expanded="true" signature="3581:3596" ph="..." />
           </folding>
         </state>
       </provider>
@@ -872,8 +870,8 @@
           <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -883,7 +881,7 @@
         <state relative-caret-position="160">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <marker date="1498711907376" expanded="true" signature="2801:2816" ph="..." />
+            <marker date="1499199727683" expanded="true" signature="3581:3596" ph="..." />
           </folding>
         </state>
       </provider>
@@ -952,8 +950,8 @@
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -985,8 +983,8 @@
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1043,25 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/Associado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="70" lean-forward="false" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/mainWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="102" lean-forward="false" selection-start-line="26" selection-start-column="92" selection-end-line="26" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1073,31 +1052,8 @@
     <entry file="file://$PROJECT_DIR$/LPT1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <caret line="140" column="1" lean-forward="false" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/cadastraCliente.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="156" lean-forward="false" selection-start-line="27" selection-start-column="127" selection-end-line="27" selection-end-column="156" />
-          <folding>
-            <marker date="1498711907376" expanded="true" signature="2801:2816" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CadastraCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,8 +1070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ImprimeCheque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="131" column="31" lean-forward="true" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+        <state relative-caret-position="346">
+          <caret line="139" column="22" lean-forward="true" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#728#729#0" expanded="true" />
@@ -1126,38 +1082,139 @@
             <element signature="e#915#916#0" expanded="true" />
             <element signature="e#968#969#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-            <element signature="e#3584#3585#0" expanded="true" />
-            <element signature="e#3619#3620#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#3770#3771#0" expanded="true" />
+            <element signature="e#3805#3806#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/View/cadastraCliente.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2080">
-          <caret line="130" column="14" lean-forward="false" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
+        <state relative-caret-position="240">
+          <caret line="15" column="89" lean-forward="true" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1499199727683" expanded="true" signature="3581:3596" ph="..." />
           </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/novoDependente.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/NovoDependente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/Dependente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/mainWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding>
+            <marker date="1499201584328" expanded="true" signature="699:3001" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="747:2990" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="767:2971" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="829:1530" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="857:1506" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="1594:2042" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="1622:2018" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="2105:2516" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="2133:2492" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="2576:2950" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="2604:2926" ph="..." />
+            <marker date="1499201584328" expanded="true" signature="3014:3115" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/Convenio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CadastraCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/Associado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/Dados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="72" column="75" lean-forward="true" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

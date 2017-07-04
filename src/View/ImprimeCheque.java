@@ -34,7 +34,7 @@ public class ImprimeCheque {
     private Button cancela;
 
     private int distCima = 10;
-    private int distEsquerda = 5;
+    private int distEsquerda = 4;
 
 
     public int getDistCima() {
@@ -58,17 +58,19 @@ public class ImprimeCheque {
 
     @FXML
     public void sobe() {
-        distCima += 1;
+        if (distCima > 0)
+            distCima -= 1;
     }
 
     @FXML
     public void desce() {
-        distCima -= 1;
+        distCima += 1;
     }
 
     @FXML
     public void recua() {
-        distEsquerda -= 1;
+        if (distEsquerda > 0)
+            distEsquerda -= 1;
     }
 
     @FXML
@@ -106,31 +108,37 @@ public class ImprimeCheque {
         }
         String l1, separacao;
         for (int i = distCima; i > 0; i--) {
-            saida += ".\n";
+            saida += "\n";
         }
+
         for (int i = distEsquerda; i > 0; i--) {
-            saida += ".\t";
+            saida += "\t";
         }
-        saida += "R$ " + valor.getText() + ",00";
-        saida += "\t\t\t\t";
+        saida += "R$ " + valor.getText() + ",00\n";
+        for (int i = distEsquerda + 3; i > 0; i--) {
+            saida += "\t";
+        }
         saida += nome.getText() + "\n";
-        for (int i = distEsquerda; i > 0; i--) {
-            saida += ".\t";
+        for (int i = distEsquerda + 3; i > 0; i--) {
+            saida += "\t";
         }
-        saida += "\t\t\t\t\t\t" + cpf.getText() + "\n";
+        saida += cpf.getText() + "\n\n";
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Imprimindo");
         alert.setHeaderText(null);
-        alert.setContentText("Distancia Esquerda:" + distEsquerda + "\n"+"Distancia Acima:" + distCima + "\n");
+        alert.setContentText("Distancia Esquerda:" + distEsquerda + "\n" + "Distancia Acima:" + distCima + "\n");
         alert.showAndWait();
-        System.out.println("Distancia Esquerda:" + distEsquerda + "\n"+"Distancia Acima:" + distCima + "\n");
+        System.out.println("Distancia Esquerda:" + distEsquerda + "\n" + "Distancia Acima:" + distCima + "\n");
 
+        String aux = "";
 
-        System.out.println(saida);
         for (int i = 0; i < Integer.parseInt(quantidade.getText()); i++) {
-            Controller.enviaImpressao(saida);
+            aux += saida;
         }
+        saida = aux;
+        Controller.enviaImpressao(saida);
+        System.out.println(saida);
         closeButtonAction();
 
 

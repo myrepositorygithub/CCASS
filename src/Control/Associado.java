@@ -27,12 +27,12 @@ public class Associado {
         String aux = "";
 
         if (Dependentes.isEmpty()) {
-            return "<" + Nome + "*" + CPF + "*" + RG + "*" + Endereco + ">";
+            return  Nome + "-" + CPF + "-" + RG + "-" + Endereco ;
         } else {
             while (!Dependentes.isEmpty()) {
-                aux += "*" + Dependentes.remove(0);
+                aux += "-" + Dependentes.remove(0);
             }
-            return "<" + Nome + "*" + CPF + "*" + RG + "*" + Endereco + aux + ">";
+            return Nome + "-" + CPF + "-" + RG + "-" + Endereco + aux ;
 
         }
     }
