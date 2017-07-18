@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
-public class Controller {
+public class ControladoraPrincipal {
 
     /**
      * * Variaveis de interface **
@@ -62,7 +62,7 @@ public class Controller {
 
         System.out.println("testa encerrar");
         try {
-            Main.dados.encerraPrograma();
+            CCASS.dados.encerraPrograma();
             System.exit(0);
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,7 +96,7 @@ public class Controller {
 
         System.out.println("teste");
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/imprimeCheque.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/imprimeCheque.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);
@@ -165,7 +165,7 @@ public class Controller {
 
         System.out.println("teste");
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/cadastraCliente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/cadastraCliente.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);

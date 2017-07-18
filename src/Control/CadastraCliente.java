@@ -133,7 +133,7 @@ public class CadastraCliente {
                         addrField.getText(), new ArrayList<String>());
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
-                Main.dados.adicionaAssociado(novo);
+                CCASS.dados.adicionaAssociado(novo);
                 closeButtonAction();
             }
         }
@@ -142,7 +142,7 @@ public class CadastraCliente {
     @FXML
     private void adcDependente(){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/novoDependente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/novoDependente.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);

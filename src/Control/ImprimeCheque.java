@@ -137,7 +137,7 @@ public class ImprimeCheque {
             aux += saida;
         }
         saida = aux;
-        Controller.enviaImpressao(saida);
+        ControladoraPrincipal.enviaImpressao(saida);
         System.out.println(saida);
         closeButtonAction();
 
