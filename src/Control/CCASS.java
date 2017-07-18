@@ -14,7 +14,7 @@ public class CCASS extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         dados = new Dados();
-        Parent root = FXMLLoader.load(getClass().getResource("/View/mainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/janelaPrincipal.fxml"));
         primaryStage.setTitle("Controle de Clientes Asserjup");
         primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();

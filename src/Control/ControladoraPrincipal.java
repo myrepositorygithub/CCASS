@@ -1,7 +1,6 @@
 package Control;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +16,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.util.ArrayList;
+
+import static Control.CCASS.dados;
 
 public class ControladoraPrincipal {
 
@@ -63,42 +63,23 @@ public class ControladoraPrincipal {
     @FXML
     private TableColumn<Associado, String> colunaCPF;
     @FXML
-    private ObservableList<Associado> associados = FXCollections.observableArrayList();
+    public static ObservableList<Associado> associados = FXCollections.observableArrayList();
 
 
     public ControladoraPrincipal() {
-
-
         // Inserir alguns dados para teste
-        associados.add(new Associado("Thiago Oliveira Cabral", "131.378.671-59", "2029519-6", "Rua Das Batatas", null));
-        associados.add(new Associado("Glaupe Cristina De Oliveira Cabral", "231.378.671-59", "2029519-6", "Rua Das Batatas", null));
-        associados.add(new Associado("Lívia Cristina de  Oliveira Cabral", "331.378.671-59", "2029519-6", "Rua Das Batatas", null));
-
+        associados.add(new Associado("Thiago Oliveira Cabral", "131.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas", null));
+        associados.add(new Associado("Glaupe Cristina De Oliveira Cabral", "231.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas", null));
+        associados.add(new Associado("Lívia Cristina de  Oliveira Cabral", "331.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas", null));
     }
 
     @FXML
     private void initialize() {
         // Inicializar as colunas
-
-
-
-
-        colunaNome.setCellValueFactory(new PropertyValueFactory<Associado,String>("Nome"));
-        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado,String>("Telefone"));
-        colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado,String>("CPF"));
-
-
+        colunaNome.setCellValueFactory(new PropertyValueFactory<Associado, String>("Nome"));
+        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("Telefone"));
+        colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado, String>("CPF"));
         tabela.setItems(associados);
-
-        System.out.println(associados.size());
-        /*
-        colunaNome.setCellValueFactory(cellData -> cellData.getValue().NomeProp());
-        colunaTel.setCellValueFactory(cellData -> cellData.getValue().RGProp());
-        colunaCPF.setCellValueFactory(cellData -> cellData.getValue().CPFProp());
-        */
-        System.out.println("foi quase");
-
-
     }
 
 
@@ -106,7 +87,7 @@ public class ControladoraPrincipal {
 
         System.out.println("testa encerrar");
         try {
-            CCASS.dados.encerraPrograma();
+            dados.encerraPrograma();
             System.exit(0);
         } catch (IOException e) {
             e.printStackTrace();
@@ -154,33 +135,6 @@ public class ControladoraPrincipal {
         }
 
 
-        /*
-        System.out.println("testa chequinho");
-        try {
-            FileOutputStream os = new FileOutputStream("LPT1");
-            //wrap stream in "friendly" PrintStream
-            PrintStream ps = new PrintStream(os);
-
-            //print text here
-            System.out.println("somebody");
-            ps.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");     // posicionar o carro da impressora na parte inferior do cheque
-            ps.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tNome fictício 1\n");
-            ps.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t000.000.000-00 1\n");
-
-            //form feed -- this is important
-            //Without the form feed, the text will simply sit
-            // in print buffer until something else gets printed.
-            ps.print("\f");
-            //flush buffer and close
-            ps.close();
-            System.out.println("to");
-        } catch (Exception e) {
-            System.out.println("Exception occurred: " + e);
-            System.out.println("love");
-        }
-
-
-        */
     }
 
 

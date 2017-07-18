@@ -70,8 +70,9 @@ public class Dados {
             System.out.println(linha);
 
             dados = linha.split("-");
-            novo = new Associado(dados[0],dados[1],dados[2], dados[3],null );
+            novo = new Associado(dados[0], dados[1], dados[2], "",dados[3], null);
 
+            ControladoraPrincipal.associados.add(novo);
         }
         leitor.close();
 
@@ -88,6 +89,7 @@ public class Dados {
     public void adicionaAssociado(Associado novo) {
         System.out.println(novo.toString());
         associados.add(novo);
+        ControladoraPrincipal.associados.add(novo);
     }
 
     public void encerraPrograma() throws IOException {

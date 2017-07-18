@@ -114,7 +114,7 @@ public class CadastraCliente {
 
             String cpf = cpfField.getText().substring(0, 3) + "." + cpfField.getText().substring(3, 6) + "." +
                     cpfField.getText().substring(6, 9) + "-" + cpfField.getText().substring(9, 11);
-            String phone = "("+foneField.getText().substring(0,2) +")"+ foneField.getText().substring(2);
+            String phone = "(" + foneField.getText().substring(0, 2) + ")" + foneField.getText().substring(2);
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmação");
@@ -129,8 +129,9 @@ public class CadastraCliente {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 // ... user chose OK
-                Associado novo = new Associado(nameField.getText(), cpfField.getText(), rgField.getText() + "-" + rgField2.getText(),
-                        addrField.getText(), new ArrayList<String>());
+                Associado novo = new Associado(nameField.getText()+"", cpfField.getText()+"",
+                        rgField.getText() + "-" + rgField2.getText(), foneField.getText()+"",
+                        addrField.getText()+"", new ArrayList<String>());
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
                 CCASS.dados.adicionaAssociado(novo);
@@ -140,7 +141,7 @@ public class CadastraCliente {
     }
 
     @FXML
-    private void adcDependente(){
+    private void adcDependente() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/novoDependente.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();

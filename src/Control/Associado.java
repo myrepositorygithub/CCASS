@@ -13,16 +13,19 @@ public class Associado {
     private final StringProperty NomeProp;
     private final StringProperty RGProp;
     private final StringProperty CPFProp;
+    private final StringProperty TELProp;
     private String Nome;
     private String RG;
     private String CPF;
+    private String TEL;
     private String Endereco;
     private ArrayList<String> Dependentes;
 
-    public Associado(String nome, String CPF, String RG, String endereco, ArrayList<String> dependentes) {
+    public Associado(String nome, String CPF, String RG, String TEL, String endereco, ArrayList<String> dependentes) {
         NomeProp = new SimpleStringProperty(nome);
         RGProp = new SimpleStringProperty(RG);
         CPFProp = new SimpleStringProperty(CPF);
+        TELProp = new SimpleStringProperty(TEL);
         this.Nome = nome;
         this.CPF = CPF;
         this.RG = RG;
@@ -73,6 +76,15 @@ public class Associado {
         this.RG = RG;
     }
 
+    public void setTEL(String TEL) {
+        TELProp.setValue(TEL);
+        this.TEL = RG;
+    }
+
+    public String getTEL() {
+        return TEL;
+    }
+
     public String getEndereco() {
         return Endereco;
     }
@@ -99,6 +111,10 @@ public class Associado {
 
     public StringProperty CPFProp() {
         return CPFProp;
+    }
+
+    public StringProperty TELProp() {
+        return TELProp;
     }
 
 
