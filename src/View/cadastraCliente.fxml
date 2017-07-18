@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="300.0" minWidth="599.0" prefHeight="449.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.CadastraCliente">
+<AnchorPane minHeight="300.0" minWidth="599.0" prefHeight="449.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.CadastraCliente">
     <children>
         <Label layoutX="35.0" layoutY="33.0" prefHeight="0.0" prefWidth="51.0" text="Nome: " />
         <Label layoutX="35.0" layoutY="75.0" prefHeight="0.0" prefWidth="51.0" text="RG:" />

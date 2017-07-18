@@ -1,6 +1,5 @@
-package View;
+package Control;
 
-import Control.Associado;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -143,7 +142,7 @@ public class CadastraCliente {
     @FXML
     private void adcDependente(){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("novoDependente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/novoDependente.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="262.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="View.ImprimeCheque">
+            fx:controller="Control.ImprimeCheque">
     <children>
         <TextField fx:id="nome" layoutX="318.0" layoutY="112.0"/>
         <TextField fx:id="cpf" layoutX="318.0" layoutY="145.0"/>

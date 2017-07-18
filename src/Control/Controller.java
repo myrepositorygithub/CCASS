@@ -1,6 +1,5 @@
-package View;
+package Control;
 
-import Control.Associado;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,7 +96,7 @@ public class Controller {
 
         System.out.println("teste");
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("imprimeCheque.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/imprimeCheque.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);
@@ -142,6 +141,7 @@ public class Controller {
 
 
     public static void enviaImpressao(String saida) {
+        System.out.println("ainda nao");
         try {
             FileOutputStream os = new FileOutputStream("LPT1");
             //wrap stream in "friendly" PrintStream
@@ -165,7 +165,7 @@ public class Controller {
 
         System.out.println("teste");
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cadastraCliente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/cadastraCliente.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);

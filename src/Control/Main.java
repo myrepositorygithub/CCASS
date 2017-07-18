@@ -1,4 +1,4 @@
-package View;
+package Control;
 
 import Control.Dados;
 import javafx.application.Application;
@@ -16,7 +16,7 @@ public class Main extends Application {
 
         dados = new Dados();
 
-        Parent root = FXMLLoader.load(getClass().getResource("mainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../View/mainWindow.fxml"));
         primaryStage.setTitle("Controle de Clientes Asserjup");
         primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();
