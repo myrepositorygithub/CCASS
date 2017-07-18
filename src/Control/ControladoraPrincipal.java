@@ -1,5 +1,7 @@
 package Control;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,10 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.event.ActionEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class ControladoraPrincipal {
 
@@ -48,12 +54,50 @@ public class ControladoraPrincipal {
     @FXML
     private ListView<Associado> listaAssociados;
 
+    @FXML
+    private TableView<Associado> tabela = new TableView<>();
+    @FXML
+    private TableColumn<Associado, String> colunaNome;
+    @FXML
+    private TableColumn<Associado, String> colunaTel;
+    @FXML
+    private TableColumn<Associado, String> colunaCPF;
+    @FXML
+    private ObservableList<Associado> associados = FXCollections.observableArrayList();
 
-    private ObservableList<Associado> associados;
 
+    public ControladoraPrincipal() {
+
+
+        // Inserir alguns dados para teste
+        associados.add(new Associado("Thiago Oliveira Cabral", "131.378.671-59", "2029519-6", "Rua Das Batatas", null));
+        associados.add(new Associado("Glaupe Cristina De Oliveira Cabral", "231.378.671-59", "2029519-6", "Rua Das Batatas", null));
+        associados.add(new Associado("Lívia Cristina de  Oliveira Cabral", "331.378.671-59", "2029519-6", "Rua Das Batatas", null));
+
+    }
 
     @FXML
     private void initialize() {
+        // Inicializar as colunas
+
+
+
+
+        colunaNome.setCellValueFactory(new PropertyValueFactory<Associado,String>("Nome"));
+        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado,String>("Telefone"));
+        colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado,String>("CPF"));
+
+
+        tabela.setItems(associados);
+
+        System.out.println(associados.size());
+        /*
+        colunaNome.setCellValueFactory(cellData -> cellData.getValue().NomeProp());
+        colunaTel.setCellValueFactory(cellData -> cellData.getValue().RGProp());
+        colunaCPF.setCellValueFactory(cellData -> cellData.getValue().CPFProp());
+        */
+        System.out.println("foi quase");
+
 
     }
 

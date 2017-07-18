@@ -5,16 +5,6 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ControladoraPrincipal">
-    <center>
-        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <content>
-                <Pane>
-               <children>
-                  <ListView fx:id="listaAssociados" />
-               </children></Pane>
-            </content>
-        </ScrollPane>
-    </center>
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -54,4 +44,17 @@
     <bottom>
         <ProgressBar prefWidth="200.0" progress="0.0" BorderPane.alignment="CENTER" />
     </bottom>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="tabela" prefHeight="551.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="colunaNome" minWidth="250.0" prefWidth="400.0" text="Nome" />
+                        <TableColumn fx:id="colunaTel" minWidth="100.0" prefWidth="250.0" text="Telefone" />
+                        <TableColumn fx:id="colunaCPF" minWidth="100.0" prefWidth="300.0" text="CPF" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </center>
 </BorderPane>
