@@ -130,8 +130,8 @@ public class CadastraCliente {
             if (result.get() == ButtonType.OK) {
                 // ... user chose OK
                 Associado novo = new Associado(nameField.getText()+"", cpfField.getText()+"",
-                        rgField.getText() + "-" + rgField2.getText(), foneField.getText()+"",
-                        addrField.getText()+"");
+                        rgField.getText() + "-" + rgField2.getText(), foneField.getText()+"",paiField.getText()+"",
+                        maelField.getText()+"",addrField.getText()+"");
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
                 CCASS.dados.adicionaAssociado(novo);

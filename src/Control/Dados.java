@@ -66,7 +66,7 @@ public class Dados {
         String dados[];
         while ((linha = bufferedReader.readLine()) != null) {
             dados = linha.split(">");
-            novo = new Associado(dados[0] + "", dados[1] + "", dados[2] + "", dados[3] + "", dados[4] + "");
+            novo = new Associado(dados[0] + "", dados[1] + "", dados[2] + "", dados[3] + "",dados[4] + "",dados[5] + "", dados[6] + "");
 
             //ControladoraPrincipal.associados.add(novo);
             if (!associados.contains(novo))
