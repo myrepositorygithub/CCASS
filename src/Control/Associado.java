@@ -19,9 +19,9 @@ public class Associado {
     private String CPF;
     private String TEL;
     private String Endereco;
-    private ArrayList<String> Dependentes;
+    private ArrayList<Dependente> Dependentes = new ArrayList<Dependente>();
 
-    public Associado(String nome, String CPF, String RG, String TEL, String endereco, ArrayList<String> dependentes) {
+    public Associado(String nome, String CPF, String RG, String TEL, String endereco, ArrayList<Dependente> dependentes) {
         NomeProp = new SimpleStringProperty(nome);
         RGProp = new SimpleStringProperty(RG);
         CPFProp = new SimpleStringProperty(CPF);
@@ -29,8 +29,21 @@ public class Associado {
         this.Nome = nome;
         this.CPF = CPF;
         this.RG = RG;
+        this.TEL = TEL;
         this.Endereco = endereco;
         this.Dependentes = dependentes;
+    }
+
+    public Associado(String nome, String CPF, String RG, String TEL, String endereco) {
+        NomeProp = new SimpleStringProperty(nome);
+        RGProp = new SimpleStringProperty(RG);
+        CPFProp = new SimpleStringProperty(CPF);
+        TELProp = new SimpleStringProperty(TEL);
+        this.Nome = nome;
+        this.CPF = CPF;
+        this.RG = RG;
+        this.TEL = TEL;
+        this.Endereco = endereco;
     }
 
 
@@ -39,12 +52,12 @@ public class Associado {
         String aux = "";
 
         if (Dependentes.isEmpty()) {
-            return Nome + "-" + CPF + "-" + RG + "-" + Endereco;
+            return Nome + ">" + CPF + ">" + RG + ">" + TEL + ">" + Endereco;
         } else {
             while (!Dependentes.isEmpty()) {
-                aux += "-" + Dependentes.remove(0);
+                aux += ">" + Dependentes.remove(0);
             }
-            return Nome + "-" + CPF + "-" + RG + "-" + Endereco + aux;
+            return Nome + ">" + CPF + ">" + RG + ">" + TEL + ">" + Endereco + aux;
 
         }
     }
@@ -93,11 +106,11 @@ public class Associado {
         Endereco = endereco;
     }
 
-    public ArrayList<String> getDependentes() {
+    public ArrayList<Dependente> getDependentes() {
         return Dependentes;
     }
 
-    public void setDependentes(ArrayList<String> dependentes) {
+    public void setDependentes(ArrayList<Dependente> dependentes) {
         Dependentes = dependentes;
     }
 

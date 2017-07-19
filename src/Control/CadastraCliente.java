@@ -131,7 +131,7 @@ public class CadastraCliente {
                 // ... user chose OK
                 Associado novo = new Associado(nameField.getText()+"", cpfField.getText()+"",
                         rgField.getText() + "-" + rgField2.getText(), foneField.getText()+"",
-                        addrField.getText()+"", new ArrayList<String>());
+                        addrField.getText()+"");
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
                 CCASS.dados.adicionaAssociado(novo);

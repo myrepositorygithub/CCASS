@@ -6,11 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -63,29 +60,62 @@ public class ControladoraPrincipal {
     @FXML
     private TableColumn<Associado, String> colunaCPF;
     @FXML
+    private TableColumn<Associado, String> colunaTeste;
+    @FXML
     public static ObservableList<Associado> associados = FXCollections.observableArrayList();
 
 
     public ControladoraPrincipal() {
         // Inserir alguns dados para teste
-        associados.add(new Associado("Thiago Oliveira Cabral", "131.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas", null));
-        associados.add(new Associado("Glaupe Cristina De Oliveira Cabral", "231.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas", null));
-        associados.add(new Associado("Lívia Cristina de  Oliveira Cabral", "331.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas", null));
+        /*
+        CCASS.dados.associados.add(new Associado("Thiago Oliveira Cabral", "131.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas"));
+        CCASS.dados.associados.add(new Associado("Glaupe Cristina De Oliveira Cabral", "231.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas"));
+        CCASS.dados.associados.add(new Associado("Lívia Cristina de  Oliveira Cabral", "331.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas"));
+        */
+        for (Associado aux :
+                CCASS.dados.associados) {
+            associados.add(aux);
+        }
     }
 
     @FXML
     private void initialize() {
         // Inicializar as colunas
         colunaNome.setCellValueFactory(new PropertyValueFactory<Associado, String>("Nome"));
-        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("Telefone"));
+        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("TEL"));
         colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado, String>("CPF"));
+        //colunaTeste.setCellValueFactory(new PropertyValueFactory<Associado, String>("Endereco"));
+        System.out.println(associados.size());
         tabela.setItems(associados);
+
+        tabela.setEditable(false);
+        /*
+        colunaTeste.setCellFactory(tc -> {
+            TableCell<Associado, String> cell = new TableCell<Associado, String>() {
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty) ;
+                    setText(empty ? null : item);
+                }
+            };
+            cell.setOnMouseClicked(e -> {
+                if (! cell.isEmpty()) {
+                    String teste = cell.getItem();
+                    // do something with id...
+                }
+            };
+            return cell ;
+        });
+        */
     }
 
 
     public void encerraSecao(ActionEvent actionEvent) {
 
         System.out.println("testa encerrar");
+
+        Dados.descarrega(CCASS.dados.associados);
+
         try {
             dados.encerraPrograma();
             System.exit(0);

@@ -10,8 +10,8 @@ public class Dados {
 
     private final File pasta;
     private final File arquivo;
-    ArrayList<Associado> associados;
-    ArrayList<Convenio> convenios;
+    ArrayList<Associado> associados = new ArrayList<Associado>();
+    ArrayList<Convenio> convenios = new ArrayList<Convenio>();
 
 
     public static final String HOME = System.getProperty("user.home") + "/CCASS/";
@@ -56,7 +56,6 @@ public class Dados {
 
     private void carregaDados() throws IOException {
         //To do
-        associados = new ArrayList<Associado>();
         convenios = new ArrayList<Convenio>();
         Associado novo;
         String linha;
@@ -64,15 +63,14 @@ public class Dados {
         FileReader leitor = new FileReader(HOME + "data");
         BufferedReader bufferedReader = new BufferedReader(leitor);
 
-        //ArrayList<String> dados = new ArrayList<String>();
         String dados[];
         while ((linha = bufferedReader.readLine()) != null) {
-            System.out.println(linha);
+            dados = linha.split(">");
+            novo = new Associado(dados[0] + "", dados[1] + "", dados[2] + "", dados[3] + "", dados[4] + "");
 
-            dados = linha.split("-");
-            novo = new Associado(dados[0], dados[1], dados[2], "",dados[3], null);
-
-            ControladoraPrincipal.associados.add(novo);
+            //ControladoraPrincipal.associados.add(novo);
+            if (!associados.contains(novo))
+                this.associados.add(novo);
         }
         leitor.close();
 
@@ -94,16 +92,31 @@ public class Dados {
 
     public void encerraPrograma() throws IOException {
 
+        File arq = new File(HOME + "data");
+
+        if(arq.exists()){
+            arq.delete();
+        }
 
         FileWriter escritor = new FileWriter(HOME + "data");
 
         for (Associado socio : associados) {
             System.out.println(">>" + socio.toString());
-            escritor.write(socio.toString());
+            escritor.write(socio.toString() + "\n");
         }
         escritor.flush();
-        escritor.flush();
+        arq.setReadOnly();
+
     }
 
 
+    public static void descarrega(ArrayList<Associado> associados) {
+
+        for (Associado aux :
+                associados) {
+            System.out.println(aux.toString());
+        }
+
+
+    }
 }
