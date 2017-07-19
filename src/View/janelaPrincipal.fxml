@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ControladoraPrincipal">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ControladoraPrincipal">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -49,9 +54,10 @@
             <children>
                 <TableView fx:id="tabela" prefHeight="551.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn fx:id="colunaNome" minWidth="250.0" prefWidth="400.0" text="Nome" />
-                        <TableColumn fx:id="colunaTel" minWidth="100.0" prefWidth="250.0" text="Telefone" />
-                        <TableColumn fx:id="colunaCPF" minWidth="100.0" prefWidth="300.0" text="CPF" />
+                        <TableColumn fx:id="colunaNome" minWidth="250.0" prefWidth="589.0" text="Nome" />
+                        <TableColumn fx:id="colunaTel" minWidth="100.0" prefWidth="178.0" text="Telefone" />
+                        <TableColumn fx:id="colunaCPF" minWidth="100.0" prefWidth="142.0" text="CPF" />
+                  <TableColumn fx:id="colunaTeste" minWidth="90.0" prefWidth="90.0" />
                     </columns>
                 </TableView>
             </children>

@@ -2,6 +2,7 @@ package Control;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class Associado {
     private String CPF;
     private String TEL;
     private String Endereco;
+    private Button Imprimir = new Button("dummy");
     private ArrayList<Dependente> Dependentes = new ArrayList<Dependente>();
 
     public Associado(String nome, String CPF, String RG, String TEL, String endereco, String Pai, String Mae, ArrayList<Dependente> dependentes) {

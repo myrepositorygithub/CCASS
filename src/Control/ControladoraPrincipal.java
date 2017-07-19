@@ -11,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Callback;
 
 import java.io.*;
 
@@ -60,7 +62,7 @@ public class ControladoraPrincipal {
     @FXML
     private TableColumn<Associado, String> colunaCPF;
     @FXML
-    private TableColumn<Associado, String> colunaTeste;
+    private TableColumn colunaTeste = new TableColumn("Action");
     @FXML
     public static ObservableList<Associado> associados = FXCollections.observableArrayList();
 
@@ -84,29 +86,47 @@ public class ControladoraPrincipal {
         colunaNome.setCellValueFactory(new PropertyValueFactory<Associado, String>("Nome"));
         colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("TEL"));
         colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado, String>("CPF"));
-        //colunaTeste.setCellValueFactory(new PropertyValueFactory<Associado, String>("Endereco"));
+        colunaTeste.setCellValueFactory(new PropertyValueFactory<>("Dummy"));
         System.out.println(associados.size());
+
+        Callback<TableColumn<Associado, String>, TableCell<Associado, String>> cellFactory
+                = //
+                new Callback<TableColumn<Associado, String>, TableCell<Associado, String>>() {
+                    @Override
+                    public TableCell call(final TableColumn<Associado, String> param) {
+                        final TableCell<Associado, String> cell = new TableCell<Associado, String>() {
+
+                            final Button btn = new Button("Imprimir");
+
+                            @Override
+                            public void updateItem(String item, boolean empty) {
+                                super.updateItem(item, empty);
+                                if (empty) {
+                                    setGraphic(null);
+                                    setText(null);
+                                } else {
+                                    btn.setOnAction(event -> {
+                                        Associado person = getTableView().getItems().get(getIndex());
+                                        System.out.println(person.getNome()
+                                                + "   " + person.getCPF());
+
+                                        printCheck(person);
+                                    });
+                                    setGraphic(btn);
+                                    setText(null);
+                                }
+                            }
+                        };
+                        return cell;
+                    }
+                };
+
+        colunaTeste.setCellFactory(cellFactory);
+        colunaTeste.setSortable(false);
         tabela.setItems(associados);
 
         tabela.setEditable(false);
-        /*
-        colunaTeste.setCellFactory(tc -> {
-            TableCell<Associado, String> cell = new TableCell<Associado, String>() {
-                @Override
-                protected void updateItem(String item, boolean empty) {
-                    super.updateItem(item, empty) ;
-                    setText(empty ? null : item);
-                }
-            };
-            cell.setOnMouseClicked(e -> {
-                if (! cell.isEmpty()) {
-                    String teste = cell.getItem();
-                    // do something with id...
-                }
-            };
-            return cell ;
-        });
-        */
+
     }
 
 
@@ -146,6 +166,22 @@ public class ControladoraPrincipal {
         System.out.println("testa impressao");
     }
 
+    public void printCheck(Associado associado){
+        CCASS.atual = associado;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/imprimirCheque2.fxml"));
+            Parent mainWindow = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            //stage.initStyle(StageStyle.UTILITY);
+            stage.setTitle("Imprimir Cheque");
+            stage.setScene(new Scene(mainWindow));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void printCheck(ActionEvent actionEvent) {
 
 
@@ -156,7 +192,7 @@ public class ControladoraPrincipal {
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);
             //stage.initStyle(StageStyle.UTILITY);
-            stage.setTitle("Cadastra Associado");
+            stage.setTitle("Imprimir Cheque");
             stage.setScene(new Scene(mainWindow));
             stage.setResizable(false);
             stage.show();

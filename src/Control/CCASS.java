@@ -13,6 +13,7 @@ import java.io.IOException;
 public class CCASS extends Application {
 
     public static Dados dados;
+    public static Associado atual;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
