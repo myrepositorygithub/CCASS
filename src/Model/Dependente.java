@@ -1,4 +1,4 @@
-package Control;
+package Model;
 
 /**
  * Created by thiago on 7/4/17.

@@ -1,5 +1,8 @@
 package Control;
 
+import Model.Associado;
+import Model.Convenio;
+
 import java.io.*;
 import java.util.ArrayList;
 
