@@ -73,9 +73,8 @@ public class CadastraConvenio {
             Convenio novo = new Convenio(nomeField.getText() + "", fantasiaField.getText() + "",
                     cnpjField.getText() + "", foneField.getText() + "", emailField.getText() + "",
                     enderecoField.getText() + "");
-            System.out.println(CCASS.dados.convenios.size());
-            CCASS.dados.adicionaConvenio(novo);
-            System.out.println(CCASS.dados.convenios.size());
+            CCASS.dados.convenios.add(novo);
+            ControladoraPrincipal.atualiza();
             closeButtonAction();
         }
 

@@ -9,11 +9,6 @@ import java.util.ArrayList;
  * Created by thiago on 6/28/17.
  */
 public class Associado {
-
-    private final StringProperty NomeProp;
-    private final StringProperty RGProp;
-    private final StringProperty CPFProp;
-    private final StringProperty TELProp;
     private String Nome;
     private String Pai;
     private String Mae;
@@ -24,10 +19,6 @@ public class Associado {
     private ArrayList<Dependente> Dependentes = new ArrayList<Dependente>();
 
     public Associado(String nome, String CPF, String RG, String Tel, String endereco, String Pai, String Mae, ArrayList<Dependente> dependentes) {
-        NomeProp = new SimpleStringProperty(nome);
-        RGProp = new SimpleStringProperty(RG);
-        CPFProp = new SimpleStringProperty(CPF);
-        TELProp = new SimpleStringProperty(Tel);
         this.Nome = nome;
         CPF = CPF.replaceAll("[^0-9]", "");
         CPF = CPF.replaceFirst("(\\d{3})(\\d)", "$1.$2");
@@ -47,10 +38,6 @@ public class Associado {
     }
 
     public Associado(String nome, String CPF, String RG, String Tel, String Pai, String Mae, String endereco) {
-        NomeProp = new SimpleStringProperty(nome);
-        RGProp = new SimpleStringProperty(RG);
-        CPFProp = new SimpleStringProperty(CPF);
-        TELProp = new SimpleStringProperty(Tel);
         this.Nome = nome;
         CPF = CPF.replaceAll("[^0-9]", "");
         CPF = CPF.replaceFirst("(\\d{3})(\\d)", "$1.$2");
@@ -75,13 +62,13 @@ public class Associado {
 
         if (Dependentes.isEmpty()) {
             return Nome + ">" + CPF.replaceAll("[^0-9]", "") + ">" + RG.replaceAll("[^0-9]", "") +
-                    ">" + Tel.replaceAll("[^0-9]", "") + ">" + Pai + ">"  + Mae + ">" + Endereco;
+                    ">" + Tel.replaceAll("[^0-9]", "") + ">" + Pai + ">" + Mae + ">" + Endereco;
         } else {
             while (!Dependentes.isEmpty()) {
                 aux += ">" + Dependentes.remove(0);
             }
             return Nome + ">" + CPF.replaceAll("[^0-9]", "") + ">" + RG.replaceAll("[^0-9]", "") +
-                    ">" + Tel.replaceAll("[^0-9]", "") + ">" + Pai + ">"  + Mae + ">" + Endereco + aux;
+                    ">" + Tel.replaceAll("[^0-9]", "") + ">" + Pai + ">" + Mae + ">" + Endereco + aux;
 
         }
     }
@@ -91,7 +78,7 @@ public class Associado {
     }
 
     public void setNome(String nome) {
-        NomeProp.setValue(nome);
+        //NomeProp.setValue(nome);
         Nome = nome;
     }
 
@@ -100,7 +87,7 @@ public class Associado {
     }
 
     public void setCPF(String CPF) {
-        CPFProp.setValue(CPF);
+        //CPFProp.setValue(CPF);
         this.CPF = CPF;
     }
 
@@ -109,12 +96,12 @@ public class Associado {
     }
 
     public void setRG(String RG) {
-        RGProp.setValue(RG);
+        //RGProp.setValue(RG);
         this.RG = RG;
     }
 
     public void setTel(String tel) {
-        TELProp.setValue(tel);
+        //TELProp.setValue(tel);
         this.Tel = RG;
     }
 
@@ -137,22 +124,4 @@ public class Associado {
     public void setDependentes(ArrayList<Dependente> dependentes) {
         Dependentes = dependentes;
     }
-
-    public StringProperty NomeProp() {
-        return NomeProp;
-    }
-
-    public StringProperty RGProp() {
-        return RGProp;
-    }
-
-    public StringProperty CPFProp() {
-        return CPFProp;
-    }
-
-    public StringProperty TELProp() {
-        return TELProp;
-    }
-
-
 }

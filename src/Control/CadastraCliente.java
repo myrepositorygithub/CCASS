@@ -139,7 +139,8 @@ public class CadastraCliente {
                         maelField.getText() + "", addrField.getText() + "");
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
-                CCASS.dados.adicionaAssociado(novo);
+                CCASS.dados.associados.add(novo);
+                ControladoraPrincipal.atualiza();
                 closeButtonAction();
             }
         }
