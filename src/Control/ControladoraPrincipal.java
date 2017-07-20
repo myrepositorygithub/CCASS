@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 import java.io.*;
@@ -84,7 +83,7 @@ public class ControladoraPrincipal {
     private void initialize() {
         // Inicializar as colunas
         colunaNome.setCellValueFactory(new PropertyValueFactory<Associado, String>("Nome"));
-        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("TEL"));
+        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("Tel"));
         colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado, String>("CPF"));
         colunaTeste.setCellValueFactory(new PropertyValueFactory<>("Dummy"));
         System.out.println(associados.size());
@@ -235,7 +234,27 @@ public class ControladoraPrincipal {
             stage.initModality(Modality.WINDOW_MODAL);
             //stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Cadastra Associado");
-            stage.setScene(new Scene(mainWindow, 600, 500));
+            stage.setScene(new Scene(mainWindow, 600, 510));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public void cadastraConvenio(ActionEvent actionEvent) {
+
+        System.out.println("teste");
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/cadastraConvenio.fxml"));
+            Parent mainWindow = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            //stage.initStyle(StageStyle.UTILITY);
+            stage.setTitle("Cadastra Concênio");
+            stage.setScene(new Scene(mainWindow, 600, 330));
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {

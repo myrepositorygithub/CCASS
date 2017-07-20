@@ -37,12 +37,6 @@ public class CadastraCliente {
     private TextField maelField;
     @FXML
     private ComboBox<String> metdPagm;
-    @FXML
-    private Button cadastra;
-    @FXML
-    private Button cancela;
-    @FXML
-    private Button addDependent;
 
     @FXML
     private void novoAssociado() {
@@ -110,17 +104,28 @@ public class CadastraCliente {
             alert.setContentText("Insira o Telefone com o DDD(Apenas numeros)!\nEx: 6599564016");
             alert.showAndWait();
         } else {
-            String rg = rgField.getText().substring(0, 7) + "-" + rgField.getText().charAt(7);
+            String rg = rgField.getText();
+            String cpf = cpfField.getText();
+            String phone = foneField.getText();
 
-            String cpf = cpfField.getText().substring(0, 3) + "." + cpfField.getText().substring(3, 6) + "." +
-                    cpfField.getText().substring(6, 9) + "-" + cpfField.getText().substring(9, 11);
-            String phone = "(" + foneField.getText().substring(0, 2) + ")" + foneField.getText().substring(2);
+            /**
+             *    Formatação dos dados numéricos
+             */
+            cpf = cpf.replaceAll("[^0-9]", "");
+            cpf = cpf.replaceFirst("(\\d{3})(\\d)", "$1.$2");
+            cpf = cpf.replaceFirst("(\\d{3})(\\d)", "$1.$2");
+            cpf = cpf.replaceFirst("(\\d{3})(\\d)", "$1-$2");
+            rg = rg.replaceAll("[^0-9]", "");
+            rg = rg.replaceFirst("(\\d{7})(\\d)", "$1-$2");
+            phone = phone.replaceAll("[^0-9]", "");
+            phone = phone.replaceFirst("(\\d{2})(\\d)", "($1) $2");
 
+            rg += " " + rgField2.getText();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmação");
             alert.setHeaderText("Detalhes do associado");
             alert.setContentText("Nome: \t\t" + nameField.getText() + "\n" +
-                    "RG: \t\t\t" + rg + " " + rgField2.getText() + "\n" +
+                    "RG: \t\t\t" + rg + "\n" +
                     "CPF: \t\t\t" + cpf + "\n" +
                     "Endereço: \t" + addrField.getText() + "\n" +
                     "Telefone: \t\t" + phone + "\n" +
@@ -129,9 +134,9 @@ public class CadastraCliente {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 // ... user chose OK
-                Associado novo = new Associado(nameField.getText()+"", cpfField.getText()+"",
-                        rgField.getText() + "-" + rgField2.getText(), foneField.getText()+"",paiField.getText()+"",
-                        maelField.getText()+"",addrField.getText()+"");
+                Associado novo = new Associado(nameField.getText() + "", cpfField.getText() + "",
+                        rgField.getText() + "-" + rgField2.getText(), foneField.getText() + "", paiField.getText() + "",
+                        maelField.getText() + "", addrField.getText() + "");
 
                 System.out.println("tentando cadastrar novo Associado: " + nameField.getText());
                 CCASS.dados.adicionaAssociado(novo);
@@ -163,7 +168,7 @@ public class CadastraCliente {
     @FXML
     private void closeButtonAction() {
         // get a handle to the stage
-        Stage stage = (Stage) cancela.getScene().getWindow();
+        Stage stage = (Stage) nameField.getScene().getWindow();
         // do what you have to do
         stage.close();
     }

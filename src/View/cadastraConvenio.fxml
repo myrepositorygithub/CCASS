@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="cancela" minHeight="330.0" minWidth="600.0" prefHeight="330.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.CadastraConvenio">
+    <children>
+        <Label layoutX="35.0" layoutY="33.0" prefHeight="0.0" prefWidth="51.0" text="Empresa:" />
+        <Label layoutX="35.0" layoutY="158.0" prefHeight="15.0" prefWidth="77.0" text="Endereço:" />
+        <Label layoutX="35.0" layoutY="111.0" prefHeight="15.0" prefWidth="36.0" text="CNPJ:" />
+        <Label layoutX="35.0" layoutY="206.0" prefHeight="15.0" prefWidth="65.0" text="Telefone:" />
+        <Label layoutX="35.0" layoutY="250.0" prefHeight="15.0" prefWidth="65.0" text="Email:" />
+        <TextField fx:id="nomeField" layoutX="136.0" layoutY="28.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="Tribunal Regional do Trabalho 23º Região" />
+        <TextField fx:id="cnpjField" layoutX="137.0" layoutY="107.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="Apenas numeros" />
+        <TextField fx:id="enderecoField" layoutX="136.0" layoutY="153.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="Rua Fictícia A" />
+        <TextField fx:id="foneField" layoutX="136.0" layoutY="201.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="162.0" promptText="DDD 9 9999 9999" />
+        <TextField fx:id="emailField" layoutX="136.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="exemplo@exe.mplo" />
+        <Button fx:id="cadastra" layoutX="68.0" layoutY="288.0" mnemonicParsing="false" onAction="#novoConvenio" text="Cadastra" />
+        <Button fx:id="cancela" cancelButton="true" defaultButton="true" layoutX="451.0" layoutY="288.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Cancela" wrapText="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </Button>
+      <Label layoutX="35.0" layoutY="72.0" prefHeight="17.0" prefWidth="91.0" text="Nome Fantasia:" />
+      <TextField fx:id="fantasiaField" layoutX="136.0" layoutY="67.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="450.0" promptText="exemplo@exe.mplo" />
+    </children>
+</AnchorPane>

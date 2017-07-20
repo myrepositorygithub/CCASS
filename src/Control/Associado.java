@@ -20,16 +20,16 @@ public class Associado {
     private String Mae;
     private String RG;
     private String CPF;
-    private String TEL;
+    private String Tel;
     private String Endereco;
     private Button Imprimir = new Button("dummy");
     private ArrayList<Dependente> Dependentes = new ArrayList<Dependente>();
 
-    public Associado(String nome, String CPF, String RG, String TEL, String endereco, String Pai, String Mae, ArrayList<Dependente> dependentes) {
+    public Associado(String nome, String CPF, String RG, String Tel, String endereco, String Pai, String Mae, ArrayList<Dependente> dependentes) {
         NomeProp = new SimpleStringProperty(nome);
         RGProp = new SimpleStringProperty(RG);
         CPFProp = new SimpleStringProperty(CPF);
-        TELProp = new SimpleStringProperty(TEL);
+        TELProp = new SimpleStringProperty(Tel);
         this.Nome = nome;
         CPF = CPF.replaceAll("[^0-9]", "");
         CPF = CPF.replaceFirst("(\\d{3})(\\d)", "$1.$2");
@@ -39,20 +39,20 @@ public class Associado {
         RG = RG.replaceAll("[^0-9]", "");
         RG = RG.replaceFirst("(\\d{7})(\\d)", "$1-$2");
         this.RG = RG;
-        TEL = TEL.replaceAll("[^0-9]", "");
-        TEL = TEL.replaceFirst("(\\d{2})(\\d)", "($1) $2");
-        this.TEL = TEL;
+        Tel = Tel.replaceAll("[^0-9]", "");
+        Tel = Tel.replaceFirst("(\\d{2})(\\d)", "($1) $2");
+        this.Tel = Tel;
         this.Pai = Pai;
         this.Mae = Mae;
         this.Endereco = endereco;
         this.Dependentes = dependentes;
     }
 
-    public Associado(String nome, String CPF, String RG, String TEL, String Pai, String Mae, String endereco) {
+    public Associado(String nome, String CPF, String RG, String Tel, String Pai, String Mae, String endereco) {
         NomeProp = new SimpleStringProperty(nome);
         RGProp = new SimpleStringProperty(RG);
         CPFProp = new SimpleStringProperty(CPF);
-        TELProp = new SimpleStringProperty(TEL);
+        TELProp = new SimpleStringProperty(Tel);
         this.Nome = nome;
         CPF = CPF.replaceAll("[^0-9]", "");
         CPF = CPF.replaceFirst("(\\d{3})(\\d)", "$1.$2");
@@ -62,9 +62,9 @@ public class Associado {
         RG = RG.replaceAll("[^0-9]", "");
         RG = RG.replaceFirst("(\\d{7})(\\d)", "$1-$2");
         this.RG = RG;
-        TEL = TEL.replaceAll("[^0-9]", "");
-        TEL = TEL.replaceFirst("(\\d{2})(\\d)", "($1) $2");
-        this.TEL = TEL;
+        Tel = Tel.replaceAll("[^0-9]", "");
+        Tel = Tel.replaceFirst("(\\d{2})(\\d)", "($1) $2");
+        this.Tel = Tel;
         this.Pai = Pai;
         this.Mae = Mae;
         this.Endereco = endereco;
@@ -77,13 +77,13 @@ public class Associado {
 
         if (Dependentes.isEmpty()) {
             return Nome + ">" + CPF.replaceAll("[^0-9]", "") + ">" + RG.replaceAll("[^0-9]", "") +
-                    ">" + TEL.replaceAll("[^0-9]", "") + ">" + Pai + ">"  + Mae + ">" + Endereco;
+                    ">" + Tel.replaceAll("[^0-9]", "") + ">" + Pai + ">"  + Mae + ">" + Endereco;
         } else {
             while (!Dependentes.isEmpty()) {
                 aux += ">" + Dependentes.remove(0);
             }
             return Nome + ">" + CPF.replaceAll("[^0-9]", "") + ">" + RG.replaceAll("[^0-9]", "") +
-                    ">" + TEL.replaceAll("[^0-9]", "") + ">" + Pai + ">"  + Mae + ">" + Endereco + aux;
+                    ">" + Tel.replaceAll("[^0-9]", "") + ">" + Pai + ">"  + Mae + ">" + Endereco + aux;
 
         }
     }
@@ -115,13 +115,13 @@ public class Associado {
         this.RG = RG;
     }
 
-    public void setTEL(String TEL) {
-        TELProp.setValue(TEL);
-        this.TEL = RG;
+    public void setTel(String tel) {
+        TELProp.setValue(tel);
+        this.Tel = RG;
     }
 
-    public String getTEL() {
-        return TEL;
+    public String getTel() {
+        return Tel;
     }
 
     public String getEndereco() {

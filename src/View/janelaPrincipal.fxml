@@ -31,7 +31,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Convênio">
                     <items>
-                        <MenuItem fx:id="cadastrarConvenio" mnemonicParsing="false" text="Cadastrar Convênio" />
+                        <MenuItem fx:id="cadastrarConvenio" mnemonicParsing="false" onAction="#cadastraConvenio" text="Cadastrar Convênio" />
                         <MenuItem fx:id="buscarConvenio" mnemonicParsing="false" text="Procurar convênio" />
                         <MenuItem fx:id="listarConvenio" mnemonicParsing="false" text="Listar Convênios" />
                     </items>
