@@ -2,6 +2,7 @@ package Control;
 
 import Model.Associado;
 import Model.Convenio;
+import Model.Dados;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+
 import java.io.*;
 
 import static Control.CCASS.dados;
@@ -96,6 +98,19 @@ public class ControladoraPrincipal {
         }
     }
 
+    public static void atualiza() {
+        for (Associado auxAss :
+                CCASS.dados.associados) {
+            if (!associados.contains(auxAss))
+                associados.add(auxAss);
+        }
+        for (Convenio auxConv :
+                CCASS.dados.convenios) {
+            if(!convenios.contains(auxConv))
+                convenios.add(auxConv);
+        }
+    }
+
     @FXML
     private void initialize() {
         // Inicializar as colunas
@@ -143,7 +158,6 @@ public class ControladoraPrincipal {
         tabelaAssociados.setItems(associados);
         tabelaAssociados.getSortOrder().add(colunaNomeAssociado);
         tabelaAssociados.setEditable(false);
-
 
 
         colunaFantasia.setCellValueFactory(new PropertyValueFactory<>("Nome"));
@@ -235,7 +249,7 @@ public class ControladoraPrincipal {
         System.out.println("testa impressao");
     }
 
-    public void printCheck(Associado associado){
+    public void printCheck(Associado associado) {
         CCASS.atual = associado;
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/imprimirCheque2.fxml"));
@@ -250,6 +264,7 @@ public class ControladoraPrincipal {
             e.printStackTrace();
         }
     }
+
     public void printCheck(ActionEvent actionEvent) {
 
 
@@ -308,7 +323,6 @@ public class ControladoraPrincipal {
             e.printStackTrace();
         }
     }
-
 
 
     public void cadastraConvenio(ActionEvent actionEvent) {

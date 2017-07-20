@@ -1,6 +1,8 @@
 package Control;
 
 import Model.Associado;
+import Model.Dados;
+import Model.XMLParser;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,7 @@ public class CCASS extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         dados = new Dados();
+        XMLParser teste = new XMLParser();
         Parent root = FXMLLoader.load(getClass().getResource("/View/janelaPrincipal.fxml"));
         primaryStage.setTitle("Controle de Clientes Asserjup");
         primaryStage.setScene(new Scene(root, 1000, 600));
