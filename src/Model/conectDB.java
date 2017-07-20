@@ -1,4 +1,3 @@
-//documento exemplo quase inalterado v0.1
 package Model;//Nome do nosso pacote //
 
 
@@ -56,7 +55,7 @@ public class conectDB {
 
             String username = "root";        //nome de um usuário de seu BD      
 
-            String password = "123456";      //sua senha de acesso
+            String password = "";      //sua senha de acesso
 
             connection = DriverManager.getConnection(url, username, password);
 
@@ -133,10 +132,7 @@ public class conectDB {
 
 
     }
-
-
-
-    //Método que reinicia sua conexão//
+//Método que reinicia sua conexão//
 
     public static java.sql.Connection ReiniciarConexao() {
 
