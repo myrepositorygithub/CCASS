@@ -1,6 +1,7 @@
 package Control;
 
 import Model.Associado;
+import Model.Convenio;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,7 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-
 import java.io.*;
 
 import static Control.CCASS.dados;
@@ -50,21 +50,33 @@ public class ControladoraPrincipal {
     private MenuItem bugReport;
     @FXML
     private MenuItem about;
-    @FXML
-    private ListView<Associado> listaAssociados;
 
     @FXML
-    private TableView<Associado> tabela = new TableView<>();
+    private TableView<Associado> tabelaAssociados = new TableView<>();
     @FXML
-    private TableColumn<Associado, String> colunaNome;
+    private TableColumn<Associado, String> colunaNomeAssociado;
     @FXML
-    private TableColumn<Associado, String> colunaTel;
+    private TableColumn<Associado, String> colunaTelAssociado;
     @FXML
     private TableColumn<Associado, String> colunaCPF;
     @FXML
-    private TableColumn colunaTeste = new TableColumn("Action");
+    private TableColumn colunaImprimeAssociado = new TableColumn("Action");
     @FXML
     public static ObservableList<Associado> associados = FXCollections.observableArrayList();
+
+
+    @FXML
+    private TableView<Convenio> tabelaConvenios = new TableView<>();
+    @FXML
+    private TableColumn<Convenio, String> colunaFantasia;
+    @FXML
+    private TableColumn<Convenio, String> colunaTelConvenio;
+    @FXML
+    private TableColumn<Convenio, String> colunaCNPJ;
+    @FXML
+    private TableColumn colunaImprimeConvenio = new TableColumn("Action");
+    @FXML
+    public static ObservableList<Convenio> convenios = FXCollections.observableArrayList();
 
 
     public ControladoraPrincipal() {
@@ -74,19 +86,23 @@ public class ControladoraPrincipal {
         CCASS.dados.associados.add(new Associado("Glaupe Cristina De Oliveira Cabral", "231.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas"));
         CCASS.dados.associados.add(new Associado("Lívia Cristina de  Oliveira Cabral", "331.378.671-59", "2029519-6", "65 99887755", "Rua Das Batatas"));
         */
-        for (Associado aux :
+        for (Associado auxAss :
                 CCASS.dados.associados) {
-            associados.add(aux);
+            associados.add(auxAss);
+        }
+        for (Convenio auxConv :
+                CCASS.dados.convenios) {
+            convenios.add(auxConv);
         }
     }
 
     @FXML
     private void initialize() {
         // Inicializar as colunas
-        colunaNome.setCellValueFactory(new PropertyValueFactory<Associado, String>("Nome"));
-        colunaTel.setCellValueFactory(new PropertyValueFactory<Associado, String>("Tel"));
-        colunaCPF.setCellValueFactory(new PropertyValueFactory<Associado, String>("CPF"));
-        colunaTeste.setCellValueFactory(new PropertyValueFactory<>("Dummy"));
+        colunaNomeAssociado.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+        colunaTelAssociado.setCellValueFactory(new PropertyValueFactory<>("Tel"));
+        colunaCPF.setCellValueFactory(new PropertyValueFactory<>("CPF"));
+        colunaImprimeAssociado.setCellValueFactory(new PropertyValueFactory<>("Dummy"));
         System.out.println(associados.size());
 
         Callback<TableColumn<Associado, String>, TableCell<Associado, String>> cellFactory
@@ -121,11 +137,64 @@ public class ControladoraPrincipal {
                     }
                 };
 
-        colunaTeste.setCellFactory(cellFactory);
-        colunaTeste.setSortable(false);
-        tabela.setItems(associados);
+        colunaImprimeAssociado.setCellFactory(cellFactory);
+        colunaNomeAssociado.setSortType(TableColumn.SortType.ASCENDING);
+        colunaImprimeAssociado.setSortable(false);
+        tabelaAssociados.setItems(associados);
+        tabelaAssociados.getSortOrder().add(colunaNomeAssociado);
+        tabelaAssociados.setEditable(false);
 
-        tabela.setEditable(false);
+
+
+        colunaFantasia.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+        colunaTelConvenio.setCellValueFactory(new PropertyValueFactory<>("Tel"));
+        colunaCNPJ.setCellValueFactory(new PropertyValueFactory<>("CNPJ"));
+        colunaImprimeConvenio.setCellValueFactory(new PropertyValueFactory<>("Dummy"));
+        System.out.println(convenios.size());
+
+        Callback<TableColumn<Convenio, String>, TableCell<Convenio, String>> cellFactoryConvenio
+                = //
+                new Callback<TableColumn<Convenio, String>, TableCell<Convenio, String>>() {
+                    @Override
+                    public TableCell call(final TableColumn<Convenio, String> param) {
+                        final TableCell<Convenio, String> cell = new TableCell<Convenio, String>() {
+
+                            final Button btn = new Button("Imprimir");
+
+                            @Override
+                            public void updateItem(String item, boolean empty) {
+                                super.updateItem(item, empty);
+                                if (empty) {
+                                    setGraphic(null);
+                                    setText(null);
+                                } else {
+                                    btn.setOnAction(event -> {
+                                        Convenio empresa = getTableView().getItems().get(getIndex());
+                                        System.out.println(empresa.getNome()
+                                                + "   " + empresa.getCNPJ());
+
+                                        printConvenio(empresa);
+                                    });
+                                    setGraphic(btn);
+                                    setText(null);
+                                }
+                            }
+                        };
+                        return cell;
+                    }
+                };
+
+        colunaImprimeConvenio.setCellFactory(cellFactoryConvenio);
+        colunaFantasia.setSortType(TableColumn.SortType.ASCENDING);
+        colunaImprimeConvenio.setSortable(false);
+        tabelaConvenios.setItems(convenios);
+        tabelaConvenios.getSortOrder().add(colunaFantasia);
+        tabelaConvenios.setEditable(false);
+
+
+    }
+
+    private void printConvenio(Convenio empresa) {
 
     }
 
@@ -173,7 +242,6 @@ public class ControladoraPrincipal {
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);
-            //stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Imprimir Cheque");
             stage.setScene(new Scene(mainWindow));
             stage.setResizable(false);
@@ -190,8 +258,7 @@ public class ControladoraPrincipal {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/imprimeCheque.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            //stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Imprimir Cheque");
             stage.setScene(new Scene(mainWindow));
             stage.setResizable(false);
@@ -232,10 +299,9 @@ public class ControladoraPrincipal {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/cadastraCliente.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            //stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Cadastra Associado");
-            stage.setScene(new Scene(mainWindow, 600, 510));
+            stage.setScene(new Scene(mainWindow, 600, 450));
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
@@ -252,8 +318,7 @@ public class ControladoraPrincipal {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/cadastraConvenio.fxml"));
             Parent mainWindow = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            //stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Cadastra Concênio");
             stage.setScene(new Scene(mainWindow, 600, 330));
             stage.setResizable(false);
@@ -262,10 +327,4 @@ public class ControladoraPrincipal {
             e.printStackTrace();
         }
     }
-/*
-    public void encerraSecao(ActionEvent actionEvent) {
-
-        System.out.println("teste");
-    }
-*/
 }

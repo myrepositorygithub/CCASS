@@ -93,6 +93,12 @@ public class Dados {
         ControladoraPrincipal.associados.add(novo);
     }
 
+    public void adicionaConvenio(Convenio novo) {
+        System.out.println(novo.toString());
+        convenios.add(novo);
+        ControladoraPrincipal.convenios.add(novo);
+    }
+
     public void encerraPrograma() throws IOException {
 
         File arq = new File(HOME + "data");

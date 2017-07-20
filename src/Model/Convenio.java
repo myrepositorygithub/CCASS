@@ -13,11 +13,17 @@ public class Convenio {
     private String Endereco;
 
 
-    public Convenio(String nome, String fantasia, String CNPJ, String tel, String email, String endereco) {
+    public Convenio(String nome, String fantasia, String CNPJ, String Tel, String email, String endereco) {
         Nome = nome;
         Fantasia = fantasia;
+        CNPJ = CNPJ.replaceAll("[^0-9]", "");
+        CNPJ = CNPJ.replaceFirst("(\\d{3})(\\d)", "$1.$2");
+        CNPJ = CNPJ.replaceFirst("(\\d{3})(\\d)", "$1.$2");
+        CNPJ = CNPJ.replaceFirst("(\\d{3})(\\d)", "$1-$2");
         this.CNPJ = CNPJ;
-        Tel = tel;
+        Tel = Tel.replaceAll("[^0-9]", "");
+        Tel = Tel.replaceFirst("(\\d{2})(\\d)", "($1) $2");
+        this.Tel = Tel;
         Email = email;
         Endereco = endereco;
     }
