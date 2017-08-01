@@ -25,8 +25,11 @@ public class ImprimeCheque2 {
     @FXML
     private Button cancela;
 
-    private int distCima = 10;
-    private int distEsquerda = 4;
+    private int distCima = CCASS.config.distanciaIntermediaria;
+    private int distEsquerda = CCASS.config.deslocamentoEsquerda1;
+    private int distEsquerda2 = CCASS.config.deslocamentoEsquerda2;
+    private int inicial = CCASS.config.distanciaInicial;
+
 
 
     public int getDistCima() {
@@ -104,7 +107,9 @@ public class ImprimeCheque2 {
             System.out.println("Campo Obrigatório: CPF");
             return;
         }
-        String l1, separacao;
+
+
+
         for (int i = distCima; i > 0; i--) {
             saida += "\n";
         }
@@ -113,11 +118,11 @@ public class ImprimeCheque2 {
             saida += "\t";
         }
         saida += "R$ " + valor.getText() + ",00\n";
-        for (int i = distEsquerda + 3; i > 0; i--) {
+        for (int i = distEsquerda + distEsquerda2; i > 0; i--) {
             saida += "\t";
         }
         saida += nome + "\n";
-        for (int i = distEsquerda + 3; i > 0; i--) {
+        for (int i = distEsquerda + distEsquerda2 +1; i > 0; i--) {
             saida += "\t";
         }
         saida += cpf + "\n\n";
@@ -134,8 +139,12 @@ public class ImprimeCheque2 {
         for (int i = 0; i < Integer.parseInt(quantidade.getText()); i++) {
             aux += saida;
         }
-        saida = aux;
-        ControladoraPrincipal.enviaImpressao(saida);
+        saida = "";
+        for (int i = inicial; i > 0; i--) {
+            saida += "\n";
+        }
+        saida = saida+aux;
+        //ControladoraPrincipal.enviaImpressao(saida);
         System.out.println(saida);
         closeButtonAction();
 
