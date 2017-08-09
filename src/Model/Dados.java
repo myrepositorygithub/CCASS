@@ -1,5 +1,7 @@
 package Model;
 
+import Control.CCASS;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -9,7 +11,8 @@ import java.util.ArrayList;
 public class Dados {
 
     private final File pasta;
-    private final File arquivo;
+    private final File dataFile;
+    private final File configFile;
     public ArrayList<Associado> associados = new ArrayList<Associado>();
     public ArrayList<Convenio> convenios = new ArrayList<Convenio>();
 
@@ -18,23 +21,41 @@ public class Dados {
 
     public Dados() {
         System.out.println(HOME);
-
+        Boolean teste = false;
         pasta = new File(HOME);
-        arquivo = new File(HOME + "data");
+        dataFile = new File(HOME + "data");
+        configFile = new File(HOME + "config");
         if (pasta.exists()) {
             System.out.println("Folder " + HOME + " exists");
-            if (arquivo.exists()) {
+            if (dataFile.exists()) {
                 System.out.println("File data exists");
+                teste = true;
+            } else {
+                teste = false;
+                System.out.println("File data does not exist");
+                System.out.println("Creating...");
                 try {
-                    carregaDados();
+                    dataFile.createNewFile();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+            if (configFile.exists()) {
+                System.out.println("File config exists");
+                teste = true;
             } else {
-                System.out.println("File does not exist");
+                System.out.println("File config does not exist");
                 System.out.println("Creating...");
                 try {
-                    arquivo.createNewFile();
+                    CCASS.config = new Configuracoes("15", "10", "4", "4");
+                    configFile.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (teste) {
+                try {
+                    carregaDados();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -45,7 +66,7 @@ public class Dados {
             pasta.mkdir();
             System.out.println("Creating File...");
             try {
-                arquivo.createNewFile();
+                dataFile.createNewFile();
                 criaDados();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -58,7 +79,7 @@ public class Dados {
         //To do
         convenios = new ArrayList<Convenio>();
         Associado novo;
-        String linha;
+        String linha, config;
 
         FileReader leitor = new FileReader(HOME + "data");
         BufferedReader bufferedReader = new BufferedReader(leitor);
@@ -74,6 +95,17 @@ public class Dados {
         }
         leitor.close();
 
+
+        leitor = new FileReader(HOME + "config");
+        bufferedReader = new BufferedReader(leitor);
+        config = "";
+        while ((linha = bufferedReader.readLine()) != null) {
+            config += linha;
+        }
+        XMLParser.unparseConfig(config);
+
+
+
     }
 
 
@@ -86,10 +118,8 @@ public class Dados {
 
     public void encerraPrograma() throws IOException {
 
-        File arq = new File(HOME + "data");
-
-        if (arq.exists()) {
-            arq.delete();
+        if (dataFile.exists()) {
+            dataFile.delete();
         }
 
         FileWriter escritor = new FileWriter(HOME + "data");
@@ -99,8 +129,19 @@ public class Dados {
             escritor.write(socio.toString() + "\n");
         }
         escritor.flush();
-        arq.setReadOnly();
+        dataFile.setReadOnly();
 
+        if (configFile.exists()) {
+            configFile.delete();
+        }
+
+        escritor = new FileWriter(HOME + "config");
+        escritor.write(XMLParser.parseConfig(CCASS.config));
+        escritor.flush();
+        //System.out.println(XMLParser.parseConfig(CCASS.config));
+
+
+        //configFile.setReadOnly();
     }
 
 

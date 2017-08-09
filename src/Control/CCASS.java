@@ -1,6 +1,7 @@
 package Control;
 
 import Model.Associado;
+import Model.Configuracoes;
 import Model.Dados;
 import Model.XMLParser;
 import javafx.application.Application;
@@ -17,10 +18,13 @@ public class CCASS extends Application {
 
     public static Dados dados;
     public static Associado atual;
+    public static Configuracoes config;
+    public static XMLParser parser;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+        parser = new XMLParser();
         dados = new Dados();
         XMLParser teste = new XMLParser();
         Parent root = FXMLLoader.load(getClass().getResource("/View/janelaPrincipal.fxml"));
